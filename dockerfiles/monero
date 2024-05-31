@@ -39,6 +39,9 @@ FROM ubuntu:22.04
 COPY --from=OG /usr/local/bin/monerod /usr/local/bin/monerod
 
 EXPOSE 18080
-EXPOSE 18081
+EXPOSE # Copy to fresh Ubuntu image to reduce size
+FROM ubuntu:22.04
+COPY --from=OG /usr/local/bin/monerod /usr/local/bin/monerod
+18081
 EXPOSE 18082
 EXPOSE 18083
